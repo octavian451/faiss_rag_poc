@@ -1,0 +1,27 @@
+Welcome to Acme Robotics.
+
+Office Hours
+------------
+The office is open Monday through Friday from 08:00 to 18:00.
+
+Vacation Policy
+---------------
+Employees receive 25 days of paid annual leave.
+Vacation requests must be submitted at least two weeks in advance.
+
+Remote Work
+-----------
+Employees may work remotely up to three days per week with manager approval.
+
+IT Support
+----------
+For password resets, email helpdesk@acmerobotics.example.
+
+Expense Policy
+--------------
+Meals are reimbursed up to €35 per day while traveling.
+Hotel expenses require manager approval if they exceed €180 per night.
+
+Meeting Rooms
+-------------
+Meeting rooms can be reserved using the internal booking portal.
