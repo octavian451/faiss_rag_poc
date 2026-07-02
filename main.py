@@ -1,9 +1,12 @@
 import faiss
 import numpy
+from langchain.agents import create_agent
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from faiss import IndexFlatL2
+    from typing import Any
+    from langgraph.graph.state import CompiledStateGraph
 
 from sentence_transformers import SentenceTransformer
 
@@ -116,3 +119,21 @@ if __name__ == "__main__":
     )
 
     print(prompt)
+
+    agent: CompiledStateGraph = create_agent(
+        model="ollama:llama3.2",
+        system_prompt="You are a helpful assistant"
+    )
+
+    result: dict[str, Any] = agent.invoke(
+        {
+            "messages": [
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ]
+        }
+    )
+
+    print(result["messages"][-1].content)
