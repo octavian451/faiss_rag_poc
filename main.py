@@ -46,7 +46,7 @@ def build_faiss_index(embeddings: ndarray) -> IndexFlatL2:
     return faiss_index
 
 
-def build_context(
+def retrieve_context(
     faiss_index: IndexFlatL2,
     query_vector: ndarray,
     data: list[str],
@@ -60,6 +60,7 @@ def build_context(
     retrieved: list[str] = [
         data[i]
         for i in indices[0]
+        if i != -1
     ]
 
     return "\n\n".join(retrieved)
@@ -107,7 +108,7 @@ if __name__ == "__main__":
         data=questions,
     )
 
-    context: str = build_context(
+    context: str = retrieve_context(
         faiss_index=faiss_index,
         query_vector=query_vector,
         data=chunks,
